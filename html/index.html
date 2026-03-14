@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>ST Timer</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/weather-icons.min.css" />
+	</head>
+	<body>
+		<div id="st-panel" data-bs-theme="dark">
+			<div id="st-card">
+				<div id="st-sky">
+					<div id="st-clouds"></div>
+					<div id="st-stars"></div>
+					<div id="st-sun-wrap">
+						<img id="st-sun" src="images/sun.svg" class="img-fluid" />
+					</div>
+					<div id="st-moon-wrap">
+						<img id="st-moon" src="images/moon.svg" class="img-fluid" />
+					</div>
+				</div>
+
+				<div id="st-menu">
+					<div class="d-flex justify-content-center">
+						<h1 id="st-time-display">08:00</h1>
+					</div>
+
+					<div class="position-relative">
+						<div id="input-info" data-toggle="tooltip" data-placement="top" title="Use arrow keys for fine-tuning" data-trigger="hover">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+								<path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+							</svg>
+						</div>
+						<input type="range" class="form-range" min="8" max="31" step="0.01" value="8" id="st-range" />
+					</div>
+
+					<div class="section-label">Weather</div>
+					<div class="weather-grid">
+						<label class="weather-btn" data-toggle="tooltip" title="Sunny" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-sunny" value="SUNNY" />
+							<i class="wi wi-day-sunny"></i>
+							<span class="weather-label">Sunny</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Cloudy" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-clouds" value="CLOUDS" />
+							<i class="wi wi-cloudy"></i>
+							<span class="weather-label">Clouds</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Misty" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-misty" value="MISTY" />
+							<i class="wi wi-day-haze"></i>
+							<span class="weather-label">Misty</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Overcast" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-overcast" value="OVERCAST" />
+							<i class="wi wi-day-cloudy"></i>
+							<span class="weather-label">Overcast</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Drizzle" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-drizzle" value="DRIZZLE" />
+							<i class="wi wi-sprinkle"></i>
+							<span class="weather-label">Drizzle</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Rain" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-rain" value="RAIN" />
+							<i class="wi wi-showers"></i>
+							<span class="weather-label">Rain</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Thunder" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-thunder" value="THUNDER" />
+							<i class="wi wi-thunderstorm"></i>
+							<span class="weather-label">Thunder</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Thunderstorm" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-thunderstorm" value="THUNDERSTORM" />
+							<i class="wi wi-storm-showers"></i>
+							<span class="weather-label">Storm</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Fog" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-fog" value="FOG" />
+							<i class="wi wi-fog"></i>
+							<span class="weather-label">Fog</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Sandstorm" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-sandstorm" value="SANDSTORM" />
+							<i class="wi wi-sandstorm"></i>
+							<span class="weather-label">Sand</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Light Snow" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-snowlight" value="SNOWLIGHT" />
+							<i class="wi wi-snow"></i>
+							<span class="weather-label">L.Snow</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Snow" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-snow" value="SNOW" />
+							<i class="wi wi-snowflake-cold"></i>
+							<span class="weather-label">Snow</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Blizzard" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-blizzard" value="BLIZZARD" />
+							<i class="wi wi-night-snow-thunderstorm"></i>
+							<span class="weather-label">Blizzard</span>
+						</label>
+						<label class="weather-btn" data-toggle="tooltip" title="Whiteout" data-trigger="hover">
+							<input type="radio" name="st-weather" class="st-weather-opt" id="st-w-whiteout" value="WHITEOUT" />
+							<i class="wi wi-sleet"></i>
+							<span class="weather-label">Whiteout</span>
+						</label>
+					</div>
+
+					<div class="section-label">Settings</div>
+					<div class="toggles-grid">
+						<label class="toggle-item" data-toggle="tooltip" title="Freeze the current time" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-freeze" />
+							<span id="st-freeze-label" class="toggle-label">Freeze Time</span>
+						</label>
+						<label class="toggle-item" data-toggle="tooltip" title="Toggle 24hr / 12hr display" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-24hr" checked />
+							<span id="st-24hr-label" class="toggle-label">24 hr</span>
+						</label>
+						<label class="toggle-item" data-toggle="tooltip" title="Auto weather cycling" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-dynamic" />
+							<span class="toggle-label">Dynamic Weather</span>
+						</label>
+						<label class="toggle-item" data-toggle="tooltip" title="Instant time change" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-instant-time" />
+							<span class="toggle-label">Instant Time</span>
+						</label>
+						<label class="toggle-item" data-toggle="tooltip" title="Instant weather change" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-instant-weather" />
+							<span class="toggle-label">Instant Weather</span>
+						</label>
+						<label class="toggle-item" data-toggle="tooltip" title="Storm warning event" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-storm" />
+							<span class="toggle-label">Storm Warning</span>
+						</label>
+					</div>
+
+					<div class="toggles-grid" style="margin-top: 4px;">
+						<label id="realtime-toggle" class="toggle-item" data-toggle="tooltip" title="Use real-world time" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-realtime" />
+							<span class="toggle-label">Real Time</span>
+						</label>
+						<label id="realweather-toggle" class="toggle-item" data-toggle="tooltip" title="Use real-world weather" data-trigger="hover">
+							<input type="checkbox" class="form-check-input" id="st-realweather" />
+							<span class="toggle-label">Real Weather</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="panel-footer">
+					<div class="real-info">
+						<span id="real-city" class="city"></span>
+						<br/>
+						<small id="real-weather"></small>
+					</div>
+					<div class="footer-buttons">
+						<button id="st-btn-save" class="btn btn-st-save">Save</button>
+						<button id="st-btn-apply" class="btn btn-st-apply">Apply</button>
+						<button id="st-btn-close" class="btn btn-st-close">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

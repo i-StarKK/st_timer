@@ -1,3 +1,5 @@
+print('st_timer/client Loading')
+
 local state = {}
 local nuiOpen = false
 local originalTime = {}
